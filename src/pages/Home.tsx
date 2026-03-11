@@ -412,8 +412,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding bg-white/2">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <h2 className="text-6xl font-bold font-display text-brand-green mb-8">Let's Talk</h2>
             <div className="flex items-center gap-4 mb-12">
@@ -466,7 +465,42 @@ export default function Home() {
               </button>
             </form>
           </div>
-        </div>
+        </div>... */}
+      <section id="contact" className="section-padding bg-white/2">
+        <div className="glass-card p-10">
+  {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
+  <form 
+    name="contact-portfolio" 
+    method="POST" 
+    data-netlify="true" 
+    className="space-y-6"
+  >
+    <input type="hidden" name="form-name" value="contact-portfolio" />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
+      <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input name="phone" type="text" placeholder="Phone" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+      <input name="subject" type="text" placeholder="Project Type" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+    </div>
+    <textarea name="message" placeholder="Tell Us About Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none" required></textarea>
+    <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
+      <Zap size={20} className="fill-current" />
+      FREE CONSULTATION
+    </button>
+  </form>
+
+  {/* --- OLD CODE (COMMENTED OUT) ---
+  <form className="space-y-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input type="text" placeholder="Name" className="..." />
+      <input type="email" placeholder="Email*" className="..." />
+    </div>
+    ... baaqi purana code yahan ...
+  </form>
+  --------------------------------- */}
+</div>
       </section>
     </>
   );
