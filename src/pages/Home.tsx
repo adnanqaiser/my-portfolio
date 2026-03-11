@@ -497,7 +497,7 @@ export default function Home() {
   <input type="hidden" name="form-name" value="contact-portfolio" />
   
   {/* Contact form fields */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
       <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
       <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
     </div>
