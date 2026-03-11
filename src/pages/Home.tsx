@@ -469,13 +469,17 @@ export default function Home() {
       <section id="contact" className="section-padding bg-white/2">
         <div className="glass-card p-10">
   {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
-  <form 
-    name="contact-portfolio" 
-    method="POST" 
-    data-netlify="true" 
-    className="space-y-6"
-  >
-    <input type="hidden" name="form-name" value="contact-portfolio" />
+ {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
+<form 
+  name="contact-portfolio" 
+  method="POST" 
+  data-netlify="true" 
+  action="/" 
+  className="space-y-6"
+>
+  <input type="hidden" name="form-name" value="contact-portfolio" />
+  
+  {/* ... baaqi saare inputs (name, email, etc.) wese hi rahen ge ... */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
       <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
@@ -485,10 +489,13 @@ export default function Home() {
       <input name="subject" type="text" placeholder="Project Type" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
     </div>
     <textarea name="message" placeholder="Tell Us About Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none" required></textarea>
-    <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
-      <Zap size={20} className="fill-current" />
-      FREE CONSULTATION
-    </button>
+    <button 
+  type="submit" 
+  className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full"
+>
+  <Zap size={20} className="fill-current" />
+  FREE CONSULTATION
+</button>
   </form>
 
   {/* --- OLD CODE (COMMENTED OUT) ---
