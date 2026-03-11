@@ -466,26 +466,41 @@ export default function Home() {
             </form>
           </div>
         </div>... */}
-      <section id="contact" className="section-padding bg-white/2">
-  <div className="container mx-auto">
-    {/* Ye line 2 columns banayegi desktop par */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section id="contact" className="py-24 bg-[#0A0A0A] border-t border-white/5">
+  <div className="container mx-auto px-6 md:px-12 lg:px-24">
+    {/* 2 columns on desktop */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
       
-      {/* Left Side: Text aur Info */}
-      <div>
-        <h2 className="text-6xl font-bold font-display text-brand-green mb-8">Let's Talk</h2>
-        <div className="space-y-8">
-           <p className="text-gray-400">Ready to start your next project with AI & Automation?</p>
-           {/* Baaqi contact info yahan... */}
+      {/* Left Side: Text aur Image */}
+      <div className="space-y-8">
+        <div>
+          <h2 className="text-6xl md:text-7xl font-bold text-emerald-500 mb-6 tracking-tighter">
+            Let's Talk
+          </h2>
+          <p className="text-xl text-zinc-300 font-medium max-w-md leading-snug">
+            Ready to start your next project with AI & Automation?
+          </p>
+        </div>
+
+        {/* Image below text */}
+        <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/10] shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000" 
+            alt="Collaboration" 
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-emerald-500/5 mix-blend-overlay"></div>
         </div>
       </div>
 
-      {/* Right Side: Form */}
-      <div className="glass-card p-10">
+      {/* Right Side: Form (Single Column Fields) */}
+      <div className="bg-zinc-900/40 p-8 md:p-10 rounded-[2.5rem] border border-white/10 backdrop-blur-xl shadow-2xl">
         <form 
           name="contact-portfolio" 
           method="POST" 
           data-netlify="true" 
+          className="flex flex-col gap-5"
           onSubmit={(e) => {
             e.preventDefault();
             const form = e.currentTarget;
@@ -504,15 +519,70 @@ export default function Home() {
         >
           <input type="hidden" name="form-name" value="contact-portfolio" />
           
-          <div className="space-y-6">
-             <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 w-full" required />
-             <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 w-full" required />
-             <textarea name="message" placeholder="Message" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 w-full resize-none" required></textarea>
-             
-             <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold w-full hover:bg-emerald-400 transition-colors">
-               FREE CONSULTATION
-             </button>
+          {/* Name Field */}
+          <div className="space-y-1">
+            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Full Name</label>
+            <input 
+              name="name" 
+              type="text" 
+              placeholder="Enter your name" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+              required 
+            />
           </div>
+
+          {/* Email Field */}
+          <div className="space-y-1">
+            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Email Address</label>
+            <input 
+              name="email" 
+              type="email" 
+              placeholder="your@email.com" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+              required 
+            />
+          </div>
+
+          {/* Phone Field */}
+          <div className="space-y-1">
+            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Phone Number</label>
+            <input 
+              name="phone" 
+              type="tel" 
+              placeholder="+92 300 0000000" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+            />
+          </div>
+
+          {/* Subject Field */}
+          <div className="space-y-1">
+            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Subject</label>
+            <input 
+              name="subject" 
+              type="text" 
+              placeholder="Project Inquiry" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+            />
+          </div>
+
+          {/* Message Field */}
+          <div className="space-y-1">
+            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Project Details</label>
+            <textarea 
+              name="message" 
+              placeholder="Tell me about your project..." 
+              rows={4} 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white resize-none" 
+              required
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            className="mt-4 w-full bg-emerald-500 text-black font-black py-5 rounded-2xl hover:bg-emerald-400 transition-all flex items-center justify-center gap-3 shadow-lg shadow-emerald-500/20"
+          >
+            FREE CONSULTATION
+          </button>
         </form>
       </div>
 
