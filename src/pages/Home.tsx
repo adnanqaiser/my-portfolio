@@ -470,14 +470,15 @@ export default function Home() {
         <div className="glass-card p-10">
   {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
  {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
+
 <form 
   name="contact-portfolio" 
   method="POST" 
   data-netlify="true" 
+  netlify="true" 
   className="space-y-6"
   onSubmit={(e) => {
-    e.preventDefault(); // Ye line 404 error aur '?' ko rokegi
-    
+    e.preventDefault();
     const formData = new FormData(e.currentTarget);
     fetch("/", {
       method: "POST",
@@ -490,10 +491,7 @@ export default function Home() {
 >
   <input type="hidden" name="form-name" value="contact-portfolio" />
   
-  {/* Baaqi inputs (Name, Email, etc.) wese hi rahen ge */}
-  <input type="hidden" name="form-name" value="contact-portfolio" />
-  
-  {/* ... baaqi saare inputs (name, email, etc.) wese hi rahen ge ... */}
+  {/* Contact form fields */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
       <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
