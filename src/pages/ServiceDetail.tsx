@@ -153,13 +153,13 @@ const ServiceDetail = () => {
               transition={{ duration: 0.6 }}
               className="glass-card p-10"
             >
-              <form 
+  <form 
   name="contact-service" 
   method="POST" 
   data-netlify="true" 
   className="space-y-6"
 >
-  {/* Ye hidden input Netlify ke liye zaroori hai */}
+  {/* Netlify ko batane ke liye ke ye kaunsa form hai */}
   <input type="hidden" name="form-name" value="contact-service" />
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -174,7 +174,7 @@ const ServiceDetail = () => {
 
   <textarea name="message" placeholder="Tell Us About Your Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none" required></textarea>
   
-  <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
+  <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all w-full md:w-fit">
     <Zap size={20} className="fill-current" />
     GET A FREE QUOTE
   </button>
