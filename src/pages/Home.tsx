@@ -579,7 +579,7 @@ export default function Home() {
 
           <button 
             type="submit" 
-            className="mt-4 w-full bg-emerald-500 text-black font-black py-5 rounded-2xl hover:bg-emerald-400 transition-all flex items-center justify-center gap-3 shadow-lg shadow-emerald-500/20"
+            className="mt-4 w-full bg-[#00ff88] text-black font-black py-5 rounded-2xl hover:bg-emerald-400 transition-all flex items-center justify-center gap-3 shadow-lg shadow-emerald-500/20"
           >
             FREE CONSULTATION
           </button>
