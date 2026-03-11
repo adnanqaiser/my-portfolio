@@ -134,7 +134,7 @@ const ServiceDetail = () => {
               <div className="absolute -inset-4 bg-brand-green/10 blur-3xl rounded-full" />
               <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/5]">
                 <img 
-                  src="https://picsum.photos/seed/contact-service/800/1000" 
+                  src="/images/maintenance-contact.jpg" 
                   alt="Contact" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -153,21 +153,32 @@ const ServiceDetail = () => {
               transition={{ duration: 0.6 }}
               className="glass-card p-10"
             >
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-                  <input type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input type="text" placeholder="Phone" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-                  <input type="text" placeholder="Subject" defaultValue={service.title} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-                </div>
-                <textarea placeholder="Tell Us About Your Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none"></textarea>
-                <button className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
-                  <Zap size={20} className="fill-current" />
-                  GET A FREE QUOTE
-                </button>
-              </form>
+              <form 
+  name="contact-service" 
+  method="POST" 
+  data-netlify="true" 
+  className="space-y-6"
+>
+  {/* Ye hidden input Netlify ke liye zaroori hai */}
+  <input type="hidden" name="form-name" value="contact-service" />
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
+    <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
+  </div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <input name="phone" type="text" placeholder="Phone" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+    <input name="subject" type="text" defaultValue={service.title} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+  </div>
+
+  <textarea name="message" placeholder="Tell Us About Your Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none" required></textarea>
+  
+  <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
+    <Zap size={20} className="fill-current" />
+    GET A FREE QUOTE
+  </button>
+</form>
             </motion.div>
           </div>
         </div>
