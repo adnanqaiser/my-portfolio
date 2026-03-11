@@ -485,11 +485,11 @@ export default function Home() {
         {/* Image below text */}
         <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/10] shadow-2xl">
           <img 
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000" 
-            alt="Collaboration" 
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            referrerPolicy="no-referrer"
-          />
+  src="/images/maintenance-contact.jpg" 
+  alt="Let's Talk" 
+  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+  referrerPolicy="no-referrer"
+/>
           <div className="absolute inset-0 bg-emerald-500/5 mix-blend-overlay"></div>
         </div>
       </div>
