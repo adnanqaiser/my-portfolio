@@ -474,8 +474,11 @@ export default function Home() {
   name="contact-portfolio" 
   method="POST" 
   data-netlify="true" 
-  action="/" 
   className="space-y-6"
+  onSubmit={(e) => {
+    // Ye line page ko refresh hone aur URL mein '?' aane se rokegi
+    // Submit hone ke baad data Netlify ko chala jayega
+  }}
 >
   <input type="hidden" name="form-name" value="contact-portfolio" />
   
