@@ -474,9 +474,9 @@ export default function Home() {
       {/* Left Side: Text aur Image */}
       <div className="space-y-8">
         <div>
-          <h2 className="text-6xl md:text-7xl font-bold text-emerald-500 mb-6 tracking-tighter">
-            Let's Talk
-          </h2>
+          <h2 className="text-[#00ff88] text-6xl md:text-7xl font-bold mb-6 tracking-tighter">
+  Let's Talk
+</h2>
           <p className="text-xl text-zinc-300 font-medium max-w-md leading-snug">
             Ready to start your next project with AI & Automation?
           </p>
