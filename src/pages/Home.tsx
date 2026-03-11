@@ -504,12 +504,12 @@ export default function Home() {
     </div>
     <textarea name="message" placeholder="Tell Us About Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none" required></textarea>
     <button 
-  type="submit" 
-  className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full"
->
-  <Zap size={20} className="fill-current" />
-  FREE CONSULTATION
-</button>
+      type="submit" 
+      className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full"
+    >
+      <Zap size={20} className="fill-current" />
+      FREE CONSULTATION
+    </button>
   </form>
 
   {/* --- OLD CODE (COMMENTED OUT) ---
