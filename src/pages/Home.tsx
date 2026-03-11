@@ -467,65 +467,58 @@ export default function Home() {
           </div>
         </div>... */}
       <section id="contact" className="section-padding bg-white/2">
-        <div className="glass-card p-10">
-  {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
- {/* --- NEW NETLIFY FORM (ACTIVE) --- */}
-
-<form 
-  name="contact-portfolio" 
-  method="POST" 
-  data-netlify="true" 
-  netlify="true" 
-  className="space-y-6"
-  onSubmit={(e) => {
-  e.preventDefault();
-  const form = e.currentTarget; // Form ka reference
-  const formData = new FormData(form);
-  
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData as any).toString(),
-  })
-    .then(() => {
-      alert("Message sent successfully!");
-      form.reset(); // Ye line form ko bilkul khali (empty) kar degi
-    })
-    .catch((error) => alert("Error: " + error));
-}}
->
-  <input type="hidden" name="form-name" value="contact-portfolio" />
-  
-  {/* Contact form fields */}
+  <div className="container mx-auto">
+    {/* Ye line 2 columns banayegi desktop par */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-      <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
-      <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" required />
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <input name="phone" type="text" placeholder="Phone" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-      <input name="subject" type="text" placeholder="Project Type" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-    </div>
-    <textarea name="message" placeholder="Tell Us About Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none" required></textarea>
-    <button 
-    type="submit" 
-    className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all duration-300 w-full"
-  >
-    <Zap size={20} className="fill-current" />
-    FREE CONSULTATION
-  </button>
-  </form>
+      
+      {/* Left Side: Text aur Info */}
+      <div>
+        <h2 className="text-6xl font-bold font-display text-brand-green mb-8">Let's Talk</h2>
+        <div className="space-y-8">
+           <p className="text-gray-400">Ready to start your next project with AI & Automation?</p>
+           {/* Baaqi contact info yahan... */}
+        </div>
+      </div>
 
-  {/* --- OLD CODE (COMMENTED OUT) ---
-  <form className="space-y-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <input type="text" placeholder="Name" className="..." />
-      <input type="email" placeholder="Email*" className="..." />
+      {/* Right Side: Form */}
+      <div className="glass-card p-10">
+        <form 
+          name="contact-portfolio" 
+          method="POST" 
+          data-netlify="true" 
+          onSubmit={(e) => {
+            e.preventDefault();
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+            fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(formData as any).toString(),
+            })
+            .then(() => {
+              alert("Message sent successfully!");
+              form.reset();
+            })
+            .catch((error) => alert(error));
+          }}
+        >
+          <input type="hidden" name="form-name" value="contact-portfolio" />
+          
+          <div className="space-y-6">
+             <input name="name" type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 w-full" required />
+             <input name="email" type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 w-full" required />
+             <textarea name="message" placeholder="Message" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 w-full resize-none" required></textarea>
+             
+             <button type="submit" className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold w-full hover:bg-emerald-400 transition-colors">
+               FREE CONSULTATION
+             </button>
+          </div>
+        </form>
+      </div>
+
     </div>
-    ... baaqi purana code yahan ...
-  </form>
-  --------------------------------- */}
-</div>
-      </section>
+  </div>
+</section>
     </>
   );
 }
