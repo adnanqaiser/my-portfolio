@@ -476,10 +476,21 @@ export default function Home() {
   data-netlify="true" 
   className="space-y-6"
   onSubmit={(e) => {
-    // Ye line page ko refresh hone aur URL mein '?' aane se rokegi
-    // Submit hone ke baad data Netlify ko chala jayega
+    e.preventDefault(); // Ye line 404 error aur '?' ko rokegi
+    
+    const formData = new FormData(e.currentTarget);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => alert("Message sent successfully!"))
+      .catch((error) => alert(error));
   }}
 >
+  <input type="hidden" name="form-name" value="contact-portfolio" />
+  
+  {/* Baaqi inputs (Name, Email, etc.) wese hi rahen ge */}
   <input type="hidden" name="form-name" value="contact-portfolio" />
   
   {/* ... baaqi saare inputs (name, email, etc.) wese hi rahen ge ... */}
