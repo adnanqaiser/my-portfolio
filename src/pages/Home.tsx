@@ -412,60 +412,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          <div>
-            <h2 className="text-6xl font-bold font-display text-brand-green mb-8">Let's Talk</h2>
-            <div className="flex items-center gap-4 mb-12">
-              <div className="w-12 h-12 rounded-full bg-brand-green flex items-center justify-center text-black">
-                <Phone size={24} />
-              </div>
-              <span className="text-2xl font-bold">+92-300-4091441</span>
-            </div>
-            
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <MapPin className="text-brand-green mt-1" size={20} />
-                <div>
-                  <p className="text-gray-500 text-xs uppercase font-bold mb-1">Location</p>
-                  <p className="font-medium">Remote / Worldwide</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Mail className="text-brand-green mt-1" size={20} />
-                <div>
-                  <p className="text-gray-500 text-xs uppercase font-bold mb-1">Official Email</p>
-                  <p className="font-medium">qaiseradnan51@gmail.com</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex gap-4 mt-12">
-              {[Facebook, Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-brand-green hover:text-black transition-all">
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="glass-card p-10">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-                <input type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Phone" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-                <input type="text" placeholder="Tell Us About Project *" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
-              </div>
-              <textarea placeholder="Tell Us About Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none"></textarea>
-              <button className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
-                <Zap size={20} className="fill-current" />
-                FREE CONSULTATION
-              </button>
-            </form>
-          </div>
-        </div>... */}
+      
       <section id="contact" className="py-24 bg-[#0A0A0A] border-t border-white/5">
   <div className="container mx-auto px-6 md:px-12 lg:px-24">
     {/* 2 columns on desktop */}
@@ -592,3 +539,58 @@ export default function Home() {
     </>
   );
 }
+
+{/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div>
+            <h2 className="text-6xl font-bold font-display text-brand-green mb-8">Let's Talk</h2>
+            <div className="flex items-center gap-4 mb-12">
+              <div className="w-12 h-12 rounded-full bg-brand-green flex items-center justify-center text-black">
+                <Phone size={24} />
+              </div>
+              <span className="text-2xl font-bold">+92-300-4091441</span>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <MapPin className="text-brand-green mt-1" size={20} />
+                <div>
+                  <p className="text-gray-500 text-xs uppercase font-bold mb-1">Location</p>
+                  <p className="font-medium">Remote / Worldwide</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Mail className="text-brand-green mt-1" size={20} />
+                <div>
+                  <p className="text-gray-500 text-xs uppercase font-bold mb-1">Official Email</p>
+                  <p className="font-medium">qaiseradnan51@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-4 mt-12">
+              {[Facebook, Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
+                <a key={i} href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-brand-green hover:text-black transition-all">
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="glass-card p-10">
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Name" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+                <input type="email" placeholder="Email*" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Phone" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+                <input type="text" placeholder="Tell Us About Project *" className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full" />
+              </div>
+              <textarea placeholder="Tell Us About Project *" rows={4} className="bg-white/5 border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green w-full resize-none"></textarea>
+              <button className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-emerald-400 transition-colors w-full md:w-fit">
+                <Zap size={20} className="fill-current" />
+                FREE CONSULTATION
+              </button>
+            </form>
+          </div>
+        </div>... */}
