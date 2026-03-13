@@ -406,7 +406,7 @@ export default function Home() {
             date="14 Mar, 2024"
             title="High-Performance Web Security"
             author="admin"
-            comments="2 Comments"
+            comments="2 Comments" 
           />
         </div>
       </section>
