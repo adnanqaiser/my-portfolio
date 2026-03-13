@@ -382,31 +382,31 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <BlogCard 
             image="/images/web-dev-ai.jpg"
-            date="14 Mar, 2024"
+            date="12 Mar, 2026"
             title="Advanced Web Development with AI"
-            author="admin"
-            comments="2 Comments"
+            author="Adnan Qaiser"
+            comments="5 Comments"
           />
           <BlogCard 
             image="/images/wordpress-seo.jpg"
-            date="14 Mar, 2024"
+            date="10 Mar, 2026"
             title="WordPress SEO for Developers"
-            author="admin"
-            comments="2 Comments"
+            author="Adnan Qaiser"
+            comments="3 Comments"
           />
           <BlogCard 
             image="/images/fullstack-wordpress.jpg"
-            date="14 Mar, 2024"
+            date="08 Mar, 2026"
             title="Full-Stack WordPress Solutions"
-            author="admin"
-            comments="2 Comments"
+            author="Adnan Qaiser"
+            comments="7 Comments"
           />
           <BlogCard 
             image="/images/web-security.jpg"
-            date="14 Mar, 2024"
+            date="05 Mar, 2026"
             title="High-Performance Web Security"
-            author="admin"
-            comments="2 Comments" 
+            author="Adnan Qaiser"
+            comments="4 Comments"
           />
         </div>
       </section>
