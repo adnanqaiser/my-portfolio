@@ -33,7 +33,7 @@ const WhatsAppButton = () => {
             className="absolute bottom-20 right-0 w-[350px] bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
           >
             {/* Header */}
-            <div className="bg-[#25D366] p-5 text-white relative">
+            <div className="bg-[#00ff88] p-5 text-white relative">
               <button 
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
