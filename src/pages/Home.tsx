@@ -29,8 +29,8 @@ import {
 const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
   <Link 
     to={`/services/${id}`} 
-    target="_blank" 
-    rel="noopener noreferrer"
+    target="_blank"           // Ye naya tab kholega
+    rel="noopener noreferrer"  // Security ke liye zaroori hai
   >
     <motion.div 
       whileHover={{ y: -5 }}
@@ -261,9 +261,8 @@ export default function Home() {
             <div>
   <p className="text-gray-500 text-xs uppercase mb-1">LinkedIn</p>
   <a 
-    href="https://www.linkedin.com/in/adnan-qaiser-521616151" 
+    href="https://www.linkedin.com/in/adnan-qaiser-developer" 
     target="_blank" 
-    rel="noopener noreferrer"
     className="font-bold hover:text-brand-green transition-colors"
   >
     adnan-qaiser
