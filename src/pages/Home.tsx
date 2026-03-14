@@ -26,18 +26,17 @@ import {
   Figma
 } from 'lucide-react';
 
-const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => {
-  
-  // Naya Tab Force karne ke liye function
-  const handleCardClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.open(`/services/${id}`, '_blank', 'noopener,noreferrer');
+const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string }) => {
+  const navigateToService = () => {
+    const url = `/services/${id}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <div 
-      onClick={handleCardClick}
+      onClick={navigateToService}
       className="cursor-pointer block h-full"
+      role="button"
     >
       <motion.div 
         whileHover={{ y: -5 }}
