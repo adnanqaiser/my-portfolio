@@ -26,31 +26,24 @@ import {
   Figma
 } from 'lucide-react';
 
-const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string }) => {
-  const navigateToService = () => {
-    const url = `/services/${id}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  return (
-    <div 
-      onClick={navigateToService}
-      className="cursor-pointer block h-full"
-      role="button"
+const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
+  <Link 
+    to={`/services/${id}`} 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="glass-card p-8 flex flex-col gap-4 hover:border-brand-green/30 h-full"
     >
-      <motion.div 
-        whileHover={{ y: -5 }}
-        className="glass-card p-8 flex flex-col gap-4 hover:border-brand-green/30 h-full"
-      >
-        <div className="w-12 h-12 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green">
-          <Icon size={24} />
-        </div>
-        <h3 className="text-xl font-bold font-display text-white">{title}</h3>
-        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
-      </motion.div>
-    </div>
-  );
-};
+      <div className="w-12 h-12 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green">
+        <Icon size={24} />
+      </div>
+      <h3 className="text-xl font-bold font-display">{title}</h3>
+      <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+    </motion.div>
+  </Link>
+);
 
 const SkillBar = ({ label, percentage }: { label: string, percentage: number }) => (
   <div className="mb-6">
