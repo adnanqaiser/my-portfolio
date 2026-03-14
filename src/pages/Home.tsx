@@ -29,8 +29,8 @@ import {
 const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
   <Link 
     to={`/services/${id}`} 
-    target="_blank" 
-    rel="noopener noreferrer"
+    target="_blank"           // ← Ye sab se zaroori line hai naye tab ke liye
+    rel="noopener noreferrer"  // ← Ye security aur performance ke liye hai
   >
     <motion.div 
       whileHover={{ y: -5 }}
@@ -39,7 +39,7 @@ const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon:
       <div className="w-12 h-12 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green">
         <Icon size={24} />
       </div>
-      <h3 className="text-xl font-bold font-display">{title}</h3>
+      <h3 className="text-xl font-bold font-display text-white">{title}</h3>
       <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
     </motion.div>
   </Link>
