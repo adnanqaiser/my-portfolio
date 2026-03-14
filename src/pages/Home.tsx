@@ -255,9 +255,16 @@ export default function Home() {
               <p className="font-bold text-sm">qaiseradnan51@gmail.com</p>
             </div>
             <div>
-              <p className="text-gray-500 text-xs uppercase mb-1">Skype</p>
-              <p className="font-bold">adnanqaiser</p>
-            </div>
+  <p className="text-gray-500 text-xs uppercase mb-1">LinkedIn</p>
+  <a 
+    href="https://www.linkedin.com/in/adnan-qaiser-521616151" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="font-bold hover:text-brand-green transition-colors"
+  >
+    adnan-qaiser
+  </a>
+</div>
           </div>
         </div>
       </section>
