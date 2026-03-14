@@ -247,9 +247,9 @@ export default function Home() {
               <p className="font-bold">Adnan Qaiser</p>
             </div>
             <div>
-              <p className="text-gray-500 text-xs uppercase mb-1">Birthday</p>
-              <p className="font-bold">12 Feb, 1984</p>
-            </div>
+  <p className="text-gray-500 text-xs uppercase mb-1">Experience</p>
+  <p className="font-bold">8+ Years</p>
+</div>
             <div>
               <p className="text-gray-500 text-xs uppercase mb-1">Email</p>
               <p className="font-bold text-sm">qaiseradnan51@gmail.com</p>
