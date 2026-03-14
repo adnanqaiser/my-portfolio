@@ -27,10 +27,11 @@ import {
 } from 'lucide-react';
 
 const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
-  <Link 
-    to={`/services/${id}`} 
-    target="_blank"           // <--- Ye line add karein
-    rel="noopener noreferrer"  // <--- Ye line security ke liye zaroori hai
+  <a 
+    href={`/services/${id}`} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="block h-full"
   >
     <motion.div 
       whileHover={{ y: -5 }}
@@ -42,7 +43,7 @@ const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon:
       <h3 className="text-xl font-bold font-display">{title}</h3>
       <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
     </motion.div>
-  </Link>
+  </a>
 );
 
 const SkillBar = ({ label, percentage }: { label: string, percentage: number }) => (
