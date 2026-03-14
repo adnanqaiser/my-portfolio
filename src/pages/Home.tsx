@@ -228,10 +228,11 @@ export default function Home() {
           <p className="text-gray-400 leading-relaxed mb-8">
             I'm a creative designer based in Remote Developer, and I'm very passionate and dedicated to my work. Since all Webium templates are developed on the basis of a deep study of the niche and harmoniously combine the most current trends in web design, sometimes it's enough to simply choose a template, add your own unique content, and get a beautiful website with the perfect navigation for your type of business.
           </p>
-          <a 
+          // className mein 'inline-flex' aur 'w-fit' add karein
+<a 
   href="/Adnan-Qaiser-CV.pdf" 
   download="Adnan-Qaiser-CV.pdf"
-  className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all inline-flex"
+  className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex inline-flex items-center gap-2 hover:bg-opacity-90 transition-all w-fit"
 >
   <Download size={20} />
   Download CV
