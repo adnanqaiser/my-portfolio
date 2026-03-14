@@ -29,8 +29,8 @@ import {
 const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
   <Link 
     to={`/services/${id}`} 
-    target="_blank"           // Ye naya tab kholega
-    rel="noopener noreferrer"  // Security ke liye zaroori hai
+    target="_blank"           // ← Ye naya tab kholega
+    rel="noopener noreferrer"  // ← Ye security ke liye lazmi hai
   >
     <motion.div 
       whileHover={{ y: -5 }}
