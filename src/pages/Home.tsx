@@ -27,7 +27,11 @@ import {
 } from 'lucide-react';
 
 const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
-  <Link to={`/services/${id}`}>
+  <Link 
+    to={`/services/${id}`} 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
     <motion.div 
       whileHover={{ y: -5 }}
       className="glass-card p-8 flex flex-col gap-4 hover:border-brand-green/30 h-full"
