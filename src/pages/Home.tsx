@@ -424,24 +424,24 @@ export default function Home() {
 
       {/* Contact Section */}
       
-      <section id="contact" className="py-24 bg-[#0A0A0A] border-t border-white/5">
+      <section id="contact" className="py-12 bg-[#0A0A0A] border-t border-white/5">
   <div className="container mx-auto px-6 md:px-12 lg:px-24">
     {/* 2 columns on desktop */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
       
       {/* Left Side: Text aur Image */}
-      <div className="space-y-8">
+      <div className="space-y-4">
         <div>
-          <h2 className="text-[#00ff88] text-6xl md:text-7xl font-bold mb-6 tracking-tighter">
+          <h2 className="text-[#00ff88] text-4xl md:text-5xl font-bold mb-2 tracking-tighter">
   Let's Talk
 </h2>
-          <p className="text-xl text-zinc-300 font-medium max-w-md leading-snug">
+          <p className="text-base text-zinc-300 font-medium leading-relaxed">
             Ready to start your next project with AI & Automation?
           </p>
         </div>
 
         {/* Image below text */}
-        <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/10] shadow-2xl">
+        <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-[16/10] shadow-lg">
           <img 
   src="/images/maintenance-contact.jpg" 
   alt="Let's Talk" 
@@ -453,12 +453,12 @@ export default function Home() {
       </div>
 
       {/* Right Side: Form (Single Column Fields) */}
-      <div className="bg-zinc-900/40 p-8 md:p-10 rounded-[2.5rem] border border-white/10 backdrop-blur-xl shadow-2xl">
+      <div className="bg-zinc-900/40 p-3 rounded-lg border border-white/10 backdrop-blur-xl shadow-lg">
         <form 
           name="contact-portfolio" 
           method="POST" 
           data-netlify="true" 
-          className="flex flex-col gap-5"
+          className="flex flex-col gap-3"
           onSubmit={(e) => {
             e.preventDefault();
             const form = e.currentTarget;
@@ -479,71 +479,124 @@ export default function Home() {
           
           {/* Name Field */}
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Full Name</label>
+            <label className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Full Name</label>
             <input 
               name="name" 
               type="text" 
               placeholder="Enter your name" 
-              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-lg px-3 py-2 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
               required 
             />
           </div>
 
           {/* Email Field */}
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Email Address</label>
+            <label className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Email Address</label>
             <input 
               name="email" 
               type="email" 
               placeholder="your@email.com" 
-              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-lg px-3 py-2 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
               required 
             />
           </div>
 
           {/* Phone Field */}
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Phone Number</label>
+            <label className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Phone Number</label>
             <input 
               name="phone" 
               type="tel" 
               placeholder="+92 300 0000000" 
-              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-lg px-3 py-2 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
             />
           </div>
 
           {/* Subject Field */}
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Subject</label>
+            <label className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Subject</label>
             <input 
               name="subject" 
               type="text" 
               placeholder="Project Inquiry" 
-              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-lg px-3 py-2 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white" 
             />
           </div>
 
           {/* Message Field */}
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Project Details</label>
+            <label className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Project Details</label>
             <textarea 
               name="message" 
               placeholder="Tell me about your project..." 
-              rows={4} 
-              className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white resize-none" 
+              rows={2} 
+              className="w-full bg-zinc-950/50 border border-white/10 rounded-lg px-3 py-2 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 text-white resize-none" 
               required
             ></textarea>
           </div>
 
           <button 
             type="submit" 
-            className="mt-4 w-full bg-[#00ff88] text-black font-black py-5 rounded-2xl hover:bg-emerald-400 transition-all flex items-center justify-center gap-3 shadow-lg shadow-emerald-500/20"
+            className="mt-2 w-full bg-[#00ff88] text-black font-bold py-2 rounded-lg hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
           >
             FREE CONSULTATION
           </button>
         </form>
       </div>
 
+    </div>
+  </div>
+</section>
+
+{/* Google Map Section */}
+<section className="py-8 bg-[#0A0A0A]">
+  <div className="container mx-auto px-6 md:px-12 lg:px-24">
+    <div className="text-center mb-6">
+      <h3 className="text-[#00ff88] text-xl md:text-2xl font-bold mb-2">Find Us Worldwide</h3>
+      <p className="text-zinc-300 text-sm">Serving clients globally with remote development services</p>
+    </div>
+    
+    <div className="bg-zinc-900/40 rounded-lg border border-white/10 overflow-hidden shadow-lg">
+      <div className="aspect-[16/10] w-full">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38719333.31638171!2d-74.0059413!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMzIuMSJX!5e0!3m2!1sen!2sus!4v1647587222222!5m2!1sen!2sus"
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Worldwide Service Map"
+        ></iframe>
+      </div>
+    </div>
+    
+    <div className="mt-6 text-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div className="glass-card p-4">
+          <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green mx-auto mb-3">
+            <MapPin size={20} />
+          </div>
+          <h4 className="text-base font-bold mb-1">Remote Services</h4>
+          <p className="text-zinc-400 text-xs">Providing top-quality development services from anywhere in the world</p>
+        </div>
+        
+        <div className="glass-card p-4">
+          <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green mx-auto mb-3">
+            <Globe size={20} />
+          </div>
+          <h4 className="text-base font-bold mb-1">Global Clients</h4>
+          <p className="text-zinc-400 text-xs">Working with businesses across multiple continents and time zones</p>
+        </div>
+        
+        <div className="glass-card p-4">
+          <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green mx-auto mb-3">
+            <Zap size={20} />
+          </div>
+          <h4 className="text-base font-bold mb-1">Fast Communication</h4>
+          <p className="text-zinc-400 text-xs">Quick response times and efficient project management</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

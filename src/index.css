@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    @apply bg-dark-bg text-white font-sans antialiased;
+    @apply bg-dark-bg text-dark-bg font-sans antialiased;
   }
 }
 
