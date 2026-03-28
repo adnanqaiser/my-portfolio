@@ -5,11 +5,9 @@ import {
   Mail, 
   X, 
   Phone, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Github,
+  Share2,
+  MessageCircle,
+  Users,
   ChevronDown
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
