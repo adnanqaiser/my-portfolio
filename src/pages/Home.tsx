@@ -210,7 +210,7 @@ export default function Home() {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 255, 136, 0.2)" }}
               whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 rounded-full border-2 border-brand-green text-brand-green font-bold text-3xl uppercase tracking-[0.2em] font-display hover:bg-brand-green hover:text-black transition-all duration-500 relative overflow-hidden group"
+              className="px-8 py-4 rounded-full border-2 border-brand-green text-brand-green font-bold text-xl uppercase tracking-[0.2em] font-display hover:bg-brand-green hover:text-black transition-all duration-500 relative overflow-hidden group"
             >
               <span className="relative z-10">HIRE ME</span>
               <div className="absolute inset-0 bg-brand-green translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
