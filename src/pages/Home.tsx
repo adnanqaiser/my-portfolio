@@ -18,12 +18,10 @@ import {
   MapPin,
   Download,
   Star,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Github,
-  Figma
+  Palette,
+  Share2,
+  MessageCircle,
+  Users
 } from 'lucide-react';
 
 const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string, key?: string }) => (
@@ -133,7 +131,7 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
         <div className="glass-card p-3 w-28 md:w-32 flex flex-col items-center gap-1.5 text-center hover:bg-white/5 cursor-default group">
           <span className="text-[8px] uppercase tracking-widest text-gray-500 font-bold">Services</span>
           <div className="flex gap-1">
-            <Figma className="text-pink-500 group-hover:scale-110 transition-transform" size={14} />
+            <Palette className="text-pink-500 group-hover:scale-110 transition-transform" size={14} />
             <Zap className="text-blue-500 fill-current group-hover:scale-110 transition-transform" size={14} />
           </div>
         </div>
