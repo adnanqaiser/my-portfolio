@@ -127,7 +127,13 @@ const Navbar = () => {
       </Link>
       
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-        <Link to="/" className={`${location.pathname === '/' ? 'text-brand-green' : 'hover:text-white'} transition-colors`}>Home</Link>
+        <Link 
+          to="/" 
+          className={`${location.pathname === '/' ? 'text-brand-green' : 'hover:text-white'} transition-colors`}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          Home
+        </Link>
         <a href="/#about" className="hover:text-white transition-colors">About</a>
         
         <div 
