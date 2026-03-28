@@ -61,7 +61,7 @@ const SkillBar = ({ label, percentage }: { label: string, percentage: number }) 
 const ProjectCard = ({ image, category, title, description }: { image: string, category: string, title: string, description: string }) => (
   <motion.div 
     whileHover={{ scale: 1.02 }}
-    className="relative group overflow-hidden rounded-2xl aspect-[16/10]"
+    className="relative group overflow-hidden rounded-2xl aspect-16/10"
   >
     <img 
       src={image} 
@@ -69,7 +69,7 @@ const ProjectCard = ({ image, category, title, description }: { image: string, c
       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       referrerPolicy="no-referrer"
     />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
+    <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
       <span className="text-[9px] uppercase tracking-widest text-brand-green font-bold mb-2 bg-brand-green/10 w-fit px-2 py-1 rounded">{category}</span>
       <h3 className="text-xl font-bold font-display mb-1">{title}</h3>
       <p className="text-gray-300 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">{description}</p>
@@ -153,7 +153,7 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
     </div>
 
     <div className="flex-1 relative flex justify-center lg:justify-end items-center pb-6 lg:pb-0">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[400px] lg:w-[350px] lg:h-[450px] pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 h-[400px] lg:w-[350px] lg:h-[450px] pointer-events-none">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 350 450" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 50 Q300 100 300 225 Q300 350 50 400" stroke="#00FF88" strokeWidth="3" strokeLinecap="round" fill="none" className="opacity-60"></path>
           <path d="M30 80 Q280 130 280 255 Q280 380 30 430" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" fill="none" className="opacity-40"></path>
