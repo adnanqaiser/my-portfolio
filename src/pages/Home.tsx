@@ -151,7 +151,7 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
     </div>
 
     <div className="flex-1 relative flex justify-center lg:justify-end items-center pb-6 lg:pb-0">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 h-[400px] lg:w-[350px] lg:h-[450px] pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 h-100 lg:w-87.5 lg:h-112.5 pointer-events-none">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 350 450" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 50 Q300 100 300 225 Q300 350 50 400" stroke="#00FF88" strokeWidth="3" strokeLinecap="round" fill="none" className="opacity-60"></path>
           <path d="M30 80 Q280 130 280 255 Q280 380 30 430" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" fill="none" className="opacity-40"></path>
@@ -162,7 +162,7 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative z-10 w-[280px] h-[380px] lg:w-[320px] lg:h-[440px] group"
+        className="relative z-10 w-70 h-95 lg:w-[320px] lg:h-110 group"
       >
         <img 
           src={heroImage} 
@@ -230,7 +230,7 @@ export default function Home() {
 <a 
   href="/Adnan-Qaiser-CV.pdf" 
   download="Adnan-Qaiser-CV.pdf"
-  className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex inline-flex items-center gap-2 hover:bg-opacity-90 transition-all w-fit"
+  className="bg-brand-green text-black px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all w-fit"
 >
   <Download size={20} />
   Download CV
@@ -287,7 +287,7 @@ export default function Home() {
           </div>
           <div className="space-y-12">
             <div className="relative pl-8 border-l border-brand-green/30">
-              <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
+              <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
               <h4 className="text-lg font-bold mb-1">Graduation</h4>
               <p className="text-brand-green text-xs font-bold mb-2 uppercase">University of Karachi</p>
               <p className="text-gray-500 text-xs mb-4">2008 - 2012</p>
@@ -296,7 +296,7 @@ export default function Home() {
               </p>
             </div>
             <div className="relative pl-8 border-l border-brand-green/30">
-              <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
+              <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
               <h4 className="text-lg font-bold mb-1">Freelance WordPress Developer</h4>
               <p className="text-brand-green text-xs font-bold mb-2 uppercase">Self-Employed / Fiverr & Upwork</p>
               <p className="text-gray-500 text-xs mb-4">2017 - Present</p>
@@ -370,9 +370,9 @@ export default function Home() {
       {/* Trust Logos */}
       <section className="py-12 border-y border-border overflow-hidden">
         <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="h-[1px] w-20 bg-border" />
+          <div className="h-px w-20 bg-border" />
           <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Thrusted By <span className="text-brand-green">10K+</span> Customers</span>
-          <div className="h-[1px] w-20 bg-border" />
+          <div className="h-px w-20 bg-border" />
         </div>
         <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale">
           <span className="text-2xl font-bold">envato</span>
@@ -430,7 +430,7 @@ export default function Home() {
       {/* Left Side: Text aur Image */}
       <div className="space-y-4">
         <div>
-          <h2 className="text-[#00ff88] text-4xl md:text-5xl font-bold mb-2 tracking-tighter">
+          <h2 className="text-brand-green text-4xl md:text-5xl font-bold mb-2 tracking-tighter">
   Let's Talk
 </h2>
           <p className="text-base text-zinc-300 font-medium leading-relaxed">
@@ -439,7 +439,7 @@ export default function Home() {
         </div>
 
         {/* Image below text */}
-        <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-[16/10] shadow-lg">
+        <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-16/10 shadow-lg">
           <img 
   src="/images/maintenance-contact.jpg" 
   alt="Let's Talk" 
@@ -535,7 +535,7 @@ export default function Home() {
 
           <button 
             type="submit" 
-            className="mt-2 w-full bg-[#00ff88] text-black font-bold py-2 rounded-lg hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
+            className="mt-2 w-full bg-brand-green text-black font-bold py-2 rounded-lg hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
           >
             FREE CONSULTATION
           </button>

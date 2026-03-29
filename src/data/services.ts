@@ -11,7 +11,7 @@ import {
   ShoppingCart,
   RefreshCw,
   Monitor,
-  Layout
+  Layout as LayoutIcon
 } from 'lucide-react';
 
 export interface ServiceDetail {
@@ -136,7 +136,7 @@ export const servicesData: ServiceDetail[] = [
     id: 'ui-ux-design',
     title: 'UI/UX Design Services',
     description: 'Intuitive and user-friendly interface designs focused on clean layouts, smooth navigation, and conversion.',
-    icon: Layout,
+    icon: LayoutIcon,
     features: [
       { title: 'Wireframing', description: 'Planning the structure of your website before we build it.' },
       { title: 'Prototyping', description: 'Creating interactive designs to see how the final site will feel.' },

@@ -21,17 +21,17 @@ const WhatsAppButton = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
-    <div className="fixed bottom-8 right-8 z-[100]">
+    <div className="fixed bottom-8 right-8 z-100">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-20 right-0 w-[350px] bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
+            className="absolute bottom-20 right-0 w-87.5 bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
           >
             {/* Header */}
-            <div className="bg-[#00ff88] p-5 text-white relative">
+            <div className="bg-brand-green p-5 text-white relative">
               <button 
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
@@ -55,12 +55,12 @@ const WhatsAppButton = () => {
             </div>
 
             {/* Body */}
-            <div className="p-6 bg-[#E5DDD5] min-h-[150px] relative overflow-hidden">
+            <div className="p-6 bg-[#E5DDD5] min-h-37.5 relative overflow-hidden">
               <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: `url('https://wweb.dev/assets/whatsapp-chat-check/whatsapp-bg.png')`, backgroundSize: '200px' }}></div>
               
               <div className="relative z-10">
                 <div className="bg-white p-4 rounded-xl rounded-tl-none shadow-sm max-w-[85%] relative">
-                  <div className="absolute top-0 -left-2 w-0 h-0 border-t-[10px] border-t-white border-l-[10px] border-l-transparent"></div>
+                  <div className="absolute top-0 -left-2 w-0 h-0 border-t-10 border-t-white border-l-10 border-l-transparent"></div>
                   <p className="text-gray-800 text-sm leading-relaxed">
                     "{message}"
                   </p>
@@ -96,7 +96,7 @@ const WhatsAppButton = () => {
         animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-shadow relative z-[101]"
+        className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-shadow relative z-101"
       >
         {isOpen ? (
           <X className="text-white" size={28} />
