@@ -550,12 +550,12 @@ export default function Home() {
 <section className="py-8 bg-[#1A1A1A]">
   <div className="container mx-auto px-6 md:px-12 lg:px-24">
     <div className="text-center mb-6">
-      <h3 className="text-[#00ff88] text-xl md:text-2xl font-bold mb-2">Find Us Worldwide</h3>
+      <h3 className="text-brand-green text-xl md:text-2xl font-bold mb-2">Find Us Worldwide</h3>
       <p className="text-zinc-300 text-sm">Serving clients globally with remote development services</p>
     </div>
     
     <div className="bg-zinc-900/40 rounded-lg border border-white/10 overflow-hidden shadow-lg">
-      <div className="aspect-[1/9] w-full">
+      <div className="aspect-video w-full">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38719333.31638171!2d-74.0059413!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMzIuMSJX!5e0!3m2!1sen!2sus!4v1647587222222!5m2!1sen!2sus"
           width="100%" 
