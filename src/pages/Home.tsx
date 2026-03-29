@@ -422,7 +422,7 @@ export default function Home() {
 
       {/* Contact Section */}
       
-      <section id="contact" className="py-12 bg-[#0A0A0A] border-t border-white/5">
+      <section id="contact" className="py-12 bg-[#1A1A1A] border-t border-white/5">
   <div className="container mx-auto px-6 md:px-12 lg:px-24">
     {/* 2 columns on desktop */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -547,7 +547,7 @@ export default function Home() {
 </section>
 
 {/* Google Map Section */}
-<section className="py-8 bg-[#0A0A0A]">
+<section className="py-8 bg-[#1A1A1A]">
   <div className="container mx-auto px-6 md:px-12 lg:px-24">
     <div className="text-center mb-6">
       <h3 className="text-[#00ff88] text-xl md:text-2xl font-bold mb-2">Find Us Worldwide</h3>
