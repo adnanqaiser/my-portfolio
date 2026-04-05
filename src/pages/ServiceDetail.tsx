@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { servicesData } from '../data/services';
-import { Star, Zap, Mail, Phone as PhoneIcon } from 'lucide-react';
+import { Star, Zap, Mail, Phone as PhoneIcon, Download } from 'lucide-react';
 
 const ServiceDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,177 +15,200 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 bg-[#0A0A0A] text-white">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 bg-background text-white">
         <h2 className="text-4xl font-bold mb-4">Service Not Found</h2>
-        <Link to="/" className="text-emerald-500 hover:underline">Back to Home</Link>
+        <Link to="/" className="text-brand-green hover:underline">Back to Home</Link>
       </div>
     );
   }
 
   return (
-    <div className="overflow-hidden bg-[#0A0A0A] text-white font-sans">
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-[#0A0A0A] border-b border-white/5 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-          <div className="max-w-4xl">
+    <>
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-125 h-125 bg-brand-green/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-12">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }} 
               animate={{ opacity: 1, scale: 1 }} 
-              className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-8"
+              className="w-16 h-16 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-6 mx-auto"
             >
               <service.icon size={32} />
             </motion.div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8">{service.title}</h1>
+            <h1 className="text-4xl md:text-6xl font-bold font-display leading-tight mb-4">{service.title}</h1>
+            <div className="w-20 h-1 bg-brand-green mx-auto rounded-full" />
           </div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-20 container mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Overview</h2>
-            <p className="text-gray-400 text-lg mb-8 leading-relaxed">{service.longDescription}</p>
-            <div className="space-y-6">
-              {service.features.map((feature, index) => (
-                <div key={index} className="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-colors">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
-                    <Star size={20} className="fill-current" />
+      <section className="section-padding">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold font-display mb-6">Overview</h2>
+              <p className="text-text-muted text-lg mb-8 leading-relaxed">{service.longDescription}</p>
+              <div className="space-y-6">
+                {service.features.map((feature, index) => (
+                  <div key={index} className="flex gap-4 p-6 rounded-2xl glass-card border border-white/5 hover:border-brand-green/30 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green shrink-0">
+                      <Star size={20} className="fill-current" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
+                      <p className="text-text-muted text-sm">{feature.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                    <p className="text-gray-400 text-sm">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-square shadow-2xl shadow-emerald-500/5">
-              <img 
-                src={service.image} 
-                alt={service.title} 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
-                referrerPolicy="no-referrer" 
-              />
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden border border-border aspect-square shadow-2xl shadow-brand-green/5">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                  referrerPolicy="no-referrer" 
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Updated Contact Section */}
-      <section id="contact" className="py-24 bg-[#0A0A0A] border-t border-white/5">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+      <section id="contact" className="section-padding">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            
-            {/* Left Side: Content & Image */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-6xl md:text-7xl font-bold text-emerald-500 mb-6 tracking-tighter">
-                  Let's Talk
+                <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">Get In Touch</span>
+                <h2 className="text-5xl md:text-6xl font-bold font-display mb-6 tracking-tight">
+                  Let's Work Together
                 </h2>
-                <p className="text-xl text-zinc-300 font-medium max-w-md leading-snug">
+                <p className="text-text-muted text-lg leading-relaxed">
                   Ready to start your next project with AI & Automation?
                 </p>
               </div>
 
-              {/* Image below text */}
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/10] shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Collaboration" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-emerald-500/5 mix-blend-overlay"></div>
-              </div>
-
-              {/* Quick Contact Info */}
-              <div className="flex flex-wrap gap-8 pt-4">
-                <div className="flex items-center gap-3 text-zinc-400">
-                  <Mail size={18} className="text-emerald-500" />
-                  <span className="text-sm">hello@adnanqaiser.com</span>
-                </div>
-                <div className="flex items-center gap-3 text-zinc-400">
-                  <PhoneIcon size={18} className="text-emerald-500" />
-                  <span className="text-sm">+92 300 0000000</span>
+              <div className="glass-card p-8 relative">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">Quick Inquiry</div>
+                
+                <div className="grid grid-cols-2 gap-y-8 mt-4">
+                  <div>
+                    <p className="text-gray-500 text-xs uppercase mb-1">Email</p>
+                    <a href="mailto:qaiseradnan51@gmail.com" className="font-bold hover:text-brand-green transition-colors">
+                      qaiseradnan51@gmail.com
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-gray-500 text-xs uppercase mb-1">Phone</p>
+                    <a href="tel:+923004091441" className="font-bold hover:text-brand-green transition-colors">
+                      +92 300 4091441
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-gray-500 text-xs uppercase mb-1">LinkedIn</p>
+                    <a
+                      href="https://www.linkedin.com/in/adnan-qaiser-developer"
+                      target="_blank"
+                      className="font-bold hover:text-brand-green transition-colors"
+                    >
+                      adnan-qaiser
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-gray-500 text-xs uppercase mb-1">Availability</p>
+                    <p className="font-bold">Remote / Worldwide</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Side: Form (Single Column Fields) */}
-            <div className="bg-zinc-900/40 p-8 md:p-10 rounded-[2.5rem] border border-white/10 backdrop-blur-xl shadow-2xl">
-              <form name="contact-service" method="POST" data-netlify="true" className="flex flex-col gap-5">
+            <div className="glass-card p-8 md:p-10 relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold shadow-[0_0_15px_rgba(0,255,136,0.3)]">
+                Quick Inquiry
+              </div>
+
+              <form
+                name="contact-service"
+                method="POST"
+                data-netlify="true"
+                className="space-y-5 mt-4"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+                  fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData as any).toString(),
+                  })
+                    .then(() => {
+                      alert("Thank you! I will get back to you soon.");
+                      form.reset();
+                    })
+                    .catch((error) => alert(error));
+                }}
+              >
                 <input type="hidden" name="form-name" value="contact-service" />
-                
-                <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Full Name</label>
-                  <input 
-                    name="name" 
-                    type="text" 
-                    placeholder="Enter your name" 
-                    className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700" 
-                    required 
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="text-xs text-gray-500 uppercase mb-2 block">Full Name</label>
+                    <input
+                      name="name"
+                      type="text"
+                      placeholder="Enter your name"
+                      className="w-full bg-white/5 border border-border rounded-xl px-4 py-3 outline-none focus:border-brand-green transition-all placeholder:text-gray-600 text-white"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs text-gray-500 uppercase mb-2 block">Email Address</label>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      className="w-full bg-white/5 border border-border rounded-xl px-4 py-3 outline-none focus:border-brand-green transition-all placeholder:text-gray-600 text-white"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs text-gray-500 uppercase mb-2 block">Subject</label>
+                  <input
+                    name="subject"
+                    type="text"
+                    value={service.title} 
+                    readOnly
+                    className="w-full bg-white/5 border border-brand-green/20 rounded-xl px-4 py-3 outline-none text-brand-green text-sm font-semibold cursor-default"
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Email Address</label>
-                  <input 
-                    name="email" 
-                    type="email" 
-                    placeholder="your@email.com" 
-                    className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700" 
-                    required 
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Phone Number</label>
-                  <input 
-                    name="phone" 
-                    type="tel" 
-                    placeholder="+92 300 0000000" 
-                    className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700" 
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Subject</label>
-                  <input 
-                    name="subject" 
-                    type="text" 
-                    defaultValue={service.title} 
-                    className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700" 
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Project Details</label>
-                  <textarea 
-                    name="message" 
-                    placeholder="Tell me about your project..." 
-                    rows={4} 
-                    className="w-full bg-zinc-950/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-emerald-500/50 transition-all placeholder:text-zinc-700 resize-none" 
+                <div>
+                  <label className="text-xs text-gray-500 uppercase mb-2 block">Project Details</label>
+                  <textarea
+                    name="message"
+                    placeholder="Tell me about your project..."
+                    rows={4}
+                    className="w-full bg-white/5 border border-border rounded-xl px-4 py-3 outline-none focus:border-brand-green transition-all placeholder:text-gray-600 text-white resize-none"
                     required
                   ></textarea>
                 </div>
 
                 <button 
                   type="submit" 
-                  className="mt-4 w-full bg-emerald-500 text-black font-black py-5 rounded-2xl hover:bg-emerald-400 transition-all flex items-center justify-center gap-3 shadow-lg shadow-emerald-500/20 group"
+                  className="w-full bg-brand-green text-black font-bold py-4 rounded-xl hover:shadow-[0_0_25px_rgba(0,255,136,0.3)] transition-all flex items-center justify-center gap-3"
                 >
                   FREE CONSULTATION
-                  <Zap size={18} className="fill-current group-hover:scale-110 transition-transform" />
+                  <Zap size={18} className="fill-current" />
                 </button>
               </form>
             </div>
-
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

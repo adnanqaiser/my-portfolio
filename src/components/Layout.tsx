@@ -8,10 +8,13 @@ import {
   Share2,
   MessageCircle,
   Users,
-  ChevronDown
+  ChevronDown,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { servicesData } from '../data/services';
+import { useTheme } from '../context/ThemeContext';
 
 const WhatsAppButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +31,7 @@ const WhatsAppButton = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-20 right-0 w-87.5 bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
+            className="absolute bottom-20 right-0 w-87.5 bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden shadow-2xl border border-white/20"
           >
             {/* Header */}
             <div className="bg-brand-green p-5 text-white relative">
@@ -59,7 +62,7 @@ const WhatsAppButton = () => {
               <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: `url('https://wweb.dev/assets/whatsapp-chat-check/whatsapp-bg.png')`, backgroundSize: '200px' }}></div>
               
               <div className="relative z-10">
-                <div className="bg-white p-4 rounded-xl rounded-tl-none shadow-sm max-w-[85%] relative">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300">
                   <div className="absolute top-0 -left-2 w-0 h-0 border-t-10 border-t-white border-l-10 border-l-transparent"></div>
                   <p className="text-gray-800 text-sm leading-relaxed">
                     "{message}"
@@ -113,9 +116,10 @@ const WhatsAppButton = () => {
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="flex items-center justify-between py-6 px-6 md:px-12 lg:px-24 sticky top-0 bg-dark-bg/80 backdrop-blur-md z-50 border-b border-border">
+    <nav className="flex items-center justify-between py-6 px-6 md:px-12 lg:px-24 fixed top-0 left-0 w-full nav-header backdrop-blur-xl z-50 border-b border-border">
       <Link to="/" className="flex items-center gap-3 group cursor-pointer">
         <div className="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(0,255,136,0.2)] group-hover:shadow-brand-green/40 transition-all duration-300">
           <Code className="text-black" size={24} />
@@ -177,13 +181,59 @@ const Navbar = () => {
       </div>
 
       <div className="hidden lg:flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center">
-          <Mail className="text-brand-green" size={18} />
-        </div>
+        <button
+          onClick={toggleTheme}
+          className="theme-toggle-btn w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center hover:bg-brand-green hover:text-black transition-all duration-300"
+          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        >
+          <AnimatePresence mode="wait">
+            {theme === 'dark' ? (
+              <motion.div
+                key="moon"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Moon size={18} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="sun"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Sun size={18} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
         <div className="text-xs">
           <p className="text-gray-500 uppercase tracking-widest font-bold">Get in touch</p>
           <p className="font-semibold">qaiseradnan51@gmail.com</p>
         </div>
+      </div>
+
+      <div className="flex lg:hidden items-center gap-3">
+        <button
+          onClick={toggleTheme}
+          className="theme-toggle-btn w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+          title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        >
+          <AnimatePresence mode="wait">
+            {theme === 'dark' ? (
+              <motion.div key="moon" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <Moon size={18} />
+              </motion.div>
+            ) : (
+              <motion.div key="sun" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <Sun size={18} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
       </div>
     </nav>
   );
@@ -198,9 +248,9 @@ const Footer = () => (
 
 export const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen bg-dark-bg text-white selection:bg-brand-green selection:text-black">
+    <div className="min-h-screen bg-background text-white selection:bg-brand-green selection:text-black">
       <Navbar />
-      <main>{children}</main>
+      <main className="pt-24">{children}</main>
       <Footer />
       <WhatsAppButton />
     </div>
