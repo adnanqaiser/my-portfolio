@@ -15,7 +15,19 @@
 
 @layer base {
   body {
-    @apply bg-background text-white font-sans antialiased;
+    background-color: #121212;
+    color: white;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   }
 }
 
