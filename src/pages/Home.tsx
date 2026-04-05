@@ -297,25 +297,25 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ProjectCard
-            image="/images/custom-wordpress-solutions.png"
+            image="/images/custom-wordpress-solutions.webp"
             category="Custom WordPress Solutions"
             title="High-performance, secure"
             description="Custom built WordPress themes and plugins optimized for speed and security."
           />
           <ProjectCard
-            image="/images/AI-Driven Web Applications.png"
+            image="/images/AI-Driven Web Applications.webp"
             category="AI-Driven Web Applications"
             title="Integrating cutting-edge AI technologies"
             description="Leveraging LLMs and custom AI agents to automate business workflows."
           />
           <ProjectCard
-            image="/images/responsive-design.png"
+            image="/images/responsive-design.webp"
             category="Responsive & Mobile-First Design"
             title="Crafting pixel-perfect, responsive interfaces"
             description="Ensuring your website looks stunning on every device and screen size."
           />
           <ProjectCard
-            image="/images/technical-seo-speed-optimization.png"
+            image="/images/technical-seo-speed-optimization.webp"
             category="Technical SEO & Speed Optimization"
             title="Enhancing website visibility and search"
             description="Data-backed SEO strategies to rank your business on the first page."
@@ -333,7 +333,7 @@ export default function Home() {
         <div className="relative w-32 h-32 mx-auto mb-8">
           <div className="absolute inset-0 bg-brand-green rounded-full blur-2xl opacity-20" />
           <img
-            src="/images/core-values.png"
+            src="/images/core-values.webp"
             alt="Avatar"
             loading="lazy"
             className="w-full h-full rounded-full border-2 border-brand-green p-1 relative z-10"
@@ -372,28 +372,28 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <BlogCard
-            image="/images/web-dev-ai.jpg"
+            image="/images/web-dev-ai.webp"
             date="12 Mar, 2026"
             title="Advanced Web Development with AI"
             author="Adnan Qaiser"
             comments="5 Comments"
           />
           <BlogCard
-            image="/images/wordpress-seo.jpg"
+            image="/images/wordpress-seo.webp"
             date="10 Mar, 2026"
             title="AI-Driven SEO Strategies for WordPress"
             author="Adnan Qaiser"
             comments="3 Comments"
           />
           <BlogCard
-            image="/images/fullstack-wordpress.jpg"
+            image="/images/fullstack-wordpress.webp"
             date="08 Mar, 2026"
             title="Full-Stack WordPress Solutions"
             author="Adnan Qaiser"
             comments="7 Comments"
           />
           <BlogCard
-            image="/images/web-security.jpg"
+            image="/images/web-security.webp"
             date="05 Mar, 2026"
             title="High-Performance Web Security"
             author="Adnan Qaiser"

@@ -141,17 +141,6 @@
   color: #111827 !important;
 }
 
-:root.light .bg-\[\#0A0A0A\],
-:root.light .bg-\[rgba\(0\2c 0\2c 0\2c 0\2c 0\)\],
-:root.light \[class*="bg-\[#"] {
-  background-color: #fafafa !important;
-}
-
-:root.light .bg-black,
-:root.light .bg-\[black\] {
-  background-color: #fafafa !important;
-}
-
 :root.light .bg-white\/5 {
   background-color: rgba(0, 0, 0, 0.04) !important;
 }
