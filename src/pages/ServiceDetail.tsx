@@ -23,7 +23,7 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div style={{ fontFamily: '"Inter", ui-sans-serif, system-ui, sans-serif' }}>
+    <div style={{ fontFamily: '"Nunito", ui-sans-serif, system-ui, sans-serif' }}>
       <section className="section-padding relative overflow-hidden">
         <div className="absolute top-0 right-0 w-125 h-125 bg-brand-green/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-7xl mx-auto relative z-10">
