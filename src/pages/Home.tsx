@@ -270,7 +270,7 @@ export default function Home() {
           <div className="space-y-12">
             <div className="relative pl-8 border-l border-brand-green/30">
               <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
-              <h4 className="text-lg font-bold mb-1">Graduation</h4>
+              <h3 className="text-lg font-bold mb-1">Graduation</h3>
               <p className="text-brand-green text-xs font-bold mb-2 uppercase">University of Karachi</p>
               <p className="text-gray-500 text-xs mb-4">2008 - 2012</p>
               <p className="text-text-muted text-sm leading-relaxed">
@@ -279,7 +279,7 @@ export default function Home() {
             </div>
             <div className="relative pl-8 border-l border-brand-green/30">
               <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
-              <h4 className="text-lg font-bold mb-1">Freelance WordPress Developer</h4>
+              <h3 className="text-lg font-bold mb-1">Freelance WordPress Developer</h3>
               <p className="text-brand-green text-xs font-bold mb-2 uppercase">Self-Employed / Fiverr & Upwork</p>
               <p className="text-gray-500 text-xs mb-4">2017 - Present</p>
               <p className="text-text-muted text-sm leading-relaxed">
