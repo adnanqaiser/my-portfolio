@@ -100,6 +100,7 @@ const WhatsAppButton = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-shadow relative z-101"
+        aria-label="Open WhatsApp chat"
       >
         {isOpen ? (
           <X className="text-white" size={28} />
@@ -240,7 +241,7 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="py-10 px-6 md:px-12 lg:px-24 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+  <footer className="py-10 px-6 md:px-12 lg:px-24 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-600">
     <p>Professional Web Developer specializing in WordPress & App Development</p>
     <p>Copyright © 2025 | Designed by Adnan Qaiser | All Rights Reserved</p>
   </footer>

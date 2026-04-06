@@ -80,7 +80,7 @@ const BlogCard = ({ image, date, title, author, comments }: { image: string, dat
       </div>
     </div>
     <div className="p-6">
-      <h4 className="text-lg font-bold mb-4 group-hover:text-brand-green transition-colors">{title}</h4>
+      <h3 className="text-lg font-bold mb-4 group-hover:text-brand-green transition-colors">{title}</h3>
       <div className="flex items-center gap-4 text-xs text-gray-500">
         <span>{author}</span>
         <span>•</span>
@@ -148,6 +148,8 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
           alt="Adnan Qaiser"
           className="w-full h-full object-contain object-bottom transition-all duration-1000 group-hover:scale-105"
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          decoding="async"
         />
       </motion.div>
     </div>
@@ -155,7 +157,7 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
 );
 
 export default function Home() {
-  const [heroImage] = useState("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop");
+  const [heroImage] = useState("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop");
 
   return (
     <>
