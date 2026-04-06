@@ -157,7 +157,7 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
 );
 
 export default function Home() {
-  const [heroImage] = useState("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop");
+  const [heroImage] = useState("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop&fm=webp");
 
   return (
     <>
