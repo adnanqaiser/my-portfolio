@@ -298,12 +298,12 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ProjectCard
-            image="/images/custom-wordpress-solutions.webp"
-            category="Custom WordPress Solutions"
-            title="High-performance, secure"
-            description="Custom built WordPress themes and plugins optimized for speed and security."
-          />
+  <ProjectCard
+    image="/images/growthstream-thumb.webp" 
+    category="Digital Agency"
+    title="GrowthStream - High Performance"
+    description="Modern SaaS-style landing page built with React and Tailwind CSS for maximum conversion."
+  />
           <ProjectCard
             image="/images/AI-Driven Web Applications.webp"
             category="AI-Driven Web Applications"
