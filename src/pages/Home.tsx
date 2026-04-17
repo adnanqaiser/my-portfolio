@@ -342,7 +342,7 @@ export default function Home() {
             <div className="relative pl-8 border-l border-brand-green/30">
               <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
               <h3 className="text-lg font-bold mb-1">
-                Freelance WordPress Developer
+                Freelance WordPress Developer Automation & Test Engineer
               </h3>
               <p className="text-brand-green text-xs font-bold mb-2 uppercase">
                 Self-Employed / Fiverr & Upwork
