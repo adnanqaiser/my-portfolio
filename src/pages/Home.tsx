@@ -381,11 +381,11 @@ export default function Home() {
             description="High-end fitness watch landing page featuring clean UI and modern product showcase."
           />
           <ProjectCard
-            image="/images/responsive-design.webp"
-            category="Responsive & Mobile-First Design"
-            title="Crafting pixel-perfect, responsive interfaces"
-            description="Ensuring your website looks stunning on every device and screen size."
-          />
+  image="/images/leadflow-dashboard-preview.webp"
+  category="Full-Stack SaaS Development"
+  title="LeadFlow CRM - Real-time Analytics Dashboard"
+  description="A high-performance CRM with Google Auth, Firestore integration, and real-time data tracking."
+/>
           <ProjectCard
             image="/images/technical-seo-speed-optimization.webp"
             category="Technical SEO & Speed Optimization"
