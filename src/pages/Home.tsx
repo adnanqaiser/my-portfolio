@@ -332,7 +332,7 @@ export default function Home() {
               <p className="text-brand-green text-xs font-bold mb-2 uppercase">
                 University of Karachi
               </p>
-              <p className="text-gray-500 text-xs mb-4">2008 - 2012</p>
+              <p className="text-gray-500 text-xs mb-4">2010-2014</p>
               <p className="text-text-muted text-sm leading-relaxed">
                 Gained a solid foundation in computer science and software
                 principles at the University of Karachi, focusing on web
