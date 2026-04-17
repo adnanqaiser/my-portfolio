@@ -253,8 +253,8 @@ export default function Home() {
           </p>
 
           <a
-            href="/Adnan-Qaiser-CV.pdf"
-            download="Adnan-Qaiser-CV.pdf"
+           href="/Adnan-Qaiser-Automation-Test-Engineer.pdf"
+download="Adnan-Qaiser-Automation-Test-Engineer.pdf"
             className="bg-brand-green text-black px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-[0_0_25px_rgba(0,255,136,0.3)] transition-all w-fit"
           >
             <Download size={20} />
@@ -349,7 +349,12 @@ export default function Home() {
               </p>
               <p className="text-gray-500 text-xs mb-4">2017 - Present</p>
               <p className="text-text-muted text-sm leading-relaxed">
-                Specializing in building high-performance web applications and AI-driven automation workflows. Expert in full-stack development and automated testing to ensure scalable, bug-free solutions. Proven track record of delivering ultra-fast WordPress platforms and custom SaaS dashboards for global clients on Fiverr, Upwork, and beyond.
+                Specializing in building high-performance web applications and
+                AI-driven automation workflows. Expert in full-stack development
+                and automated testing to ensure scalable, bug-free solutions.
+                Proven track record of delivering ultra-fast WordPress platforms
+                and custom SaaS dashboards for global clients on Fiverr, Upwork,
+                and beyond.
               </p>
             </div>
           </div>
@@ -379,11 +384,11 @@ export default function Home() {
             description="High-end fitness watch landing page featuring clean UI and modern product showcase."
           />
           <ProjectCard
-  image="/images/leadflow-dashboard-preview.webp"
-  category="Full-Stack SaaS Development"
-  title="LeadFlow CRM - Real-time Analytics Dashboard"
-  description="A high-performance CRM with Google Auth, Firestore integration, and real-time data tracking."
-/>
+            image="/images/leadflow-dashboard-preview.webp"
+            category="Full-Stack SaaS Development"
+            title="LeadFlow CRM - Real-time Analytics Dashboard"
+            description="A high-performance CRM with Google Auth, Firestore integration, and real-time data tracking."
+          />
           <ProjectCard
             image="/images/technical-seo-speed-optimization.webp"
             category="Technical SEO & Speed Optimization"
