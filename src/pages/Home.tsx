@@ -349,9 +349,7 @@ export default function Home() {
               </p>
               <p className="text-gray-500 text-xs mb-4">2017 - Present</p>
               <p className="text-text-muted text-sm leading-relaxed">
-                Specializing in building high-performance WordPress websites,
-                custom landing pages, and providing AI-driven development
-                solutions for global clients on Fiverr & Upwork and other.
+                Specializing in building high-performance web applications and AI-driven automation workflows. Expert in full-stack development and automated testing to ensure scalable, bug-free solutions. Proven track record of delivering ultra-fast WordPress platforms and custom SaaS dashboards for global clients on Fiverr, Upwork, and beyond.
               </p>
             </div>
           </div>
