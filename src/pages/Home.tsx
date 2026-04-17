@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { servicesData } from "../data/services";
-import {
-  Download,
-  Star,
-  MapPin,
-  Globe,
-  Zap,
-  Palette,
-} from "lucide-react";
+import { Download, Star, MapPin, Globe, Zap, Palette } from "lucide-react";
 
-const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon: any, title: string, description: string }) => (
+const ServiceCard = ({
+  id,
+  icon: Icon,
+  title,
+  description,
+}: {
+  id: string;
+  icon: any;
+  title: string;
+  description: string;
+}) => (
   <Link to={`/services/${id}`} target="_blank" rel="noopener noreferrer">
     <motion.div
       whileHover={{ scale: 1.05, y: -8 }}
@@ -27,7 +30,13 @@ const ServiceCard = ({ id, icon: Icon, title, description }: { id: string, icon:
   </Link>
 );
 
-const SkillBar = ({ label, percentage }: { label: string, percentage: number }) => (
+const SkillBar = ({
+  label,
+  percentage,
+}: {
+  label: string;
+  percentage: number;
+}) => (
   <div className="mb-6">
     <div className="flex justify-between mb-2">
       <span className="text-sm font-medium">{label}</span>
@@ -44,43 +53,69 @@ const SkillBar = ({ label, percentage }: { label: string, percentage: number }) 
   </div>
 );
 
-const ProjectCard = ({ image, category, title, description }: { image: string, category: string, title: string, description: string }) => (
+const ProjectCard = ({
+  image,
+  category,
+  title,
+  description,
+}: {
+  image: string;
+  category: string;
+  title: string;
+  description: string;
+}) => (
   <motion.div
     whileHover={{ scale: 1.05, y: -8 }}
     transition={{ type: "spring", stiffness: 200 }}
     className="glass-card overflow-hidden group"
   >
     <img
-  src={image}
-  alt={title}
-  loading="lazy"
-  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-  referrerPolicy="no-referrer"
-/>
+      src={image}
+      alt={title}
+      loading="lazy"
+      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+      referrerPolicy="no-referrer"
+    />
     <div className="p-6">
-      <span className="text-[9px] uppercase tracking-widest text-brand-green font-bold mb-2 block">{category}</span>
+      <span className="text-[9px] uppercase tracking-widest text-brand-green font-bold mb-2 block">
+        {category}
+      </span>
       <h3 className="text-xl font-bold font-display mb-1">{title}</h3>
       <p className="text-text-muted text-xs line-clamp-2">{description}</p>
     </div>
   </motion.div>
 );
 
-const BlogCard = ({ image, date, title, author, comments }: { image: string, date: string, title: string, author: string, comments: string }) => (
+const BlogCard = ({
+  image,
+  date,
+  title,
+  author,
+  comments,
+}: {
+  image: string;
+  date: string;
+  title: string;
+  author: string;
+  comments: string;
+}) => (
   <div className="glass-card overflow-hidden group">
     <div className="relative h-48 overflow-hidden">
       <img
-  src={image}
-  alt={title}
-  loading="lazy"
-  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-  referrerPolicy="no-referrer"
-/>
+        src={image}
+        alt={title}
+        loading="lazy"
+        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
       <div className="absolute top-4 right-4 bg-brand-green text-black px-3 py-1 rounded text-xs font-bold">
         {date}
       </div>
     </div>
     <div className="p-6">
-      <h3 className="text-lg font-bold mb-4 group-hover:text-brand-green transition-colors">{title}</h3>
+      <h3 className="text-lg font-bold mb-4 group-hover:text-brand-green transition-colors">
+        {title}
+      </h3>
       <div className="flex items-center gap-4 text-xs text-gray-500">
         <span>{author}</span>
         <span>•</span>
@@ -108,7 +143,8 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-lg text-text-muted max-w-lg mx-auto lg:mx-0 leading-relaxed"
       >
-        I build high-performance websites & custom AI agents for business automation. 🚀
+        I build high-performance websites & custom AI agents for business
+        automation. 🚀
       </motion.p>
 
       <motion.div
@@ -157,15 +193,17 @@ const MainHero = ({ heroImage }: { heroImage: string }) => (
 );
 
 export default function Home() {
-  const [heroImage] = useState("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop&fm=webp");
+  const [heroImage] = useState(
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop&fm=webp",
+  );
 
   return (
     <>
       <MainHero heroImage={heroImage} />
 
       {/* Services Section */}
-      <motion.section 
-        id="services" 
+      <motion.section
+        id="services"
         className="section-padding"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -196,12 +234,22 @@ export default function Home() {
       </motion.section>
 
       {/* About Me Section */}
-      <section id="about" className="section-padding grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section
+        id="about"
+        className="section-padding grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
         <div className="relative">
-          <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">About Me</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">I can develop solutions that help people</h2>
+          <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">
+            About Me
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            I can develop solutions that help people
+          </h2>
           <p className="text-text-muted leading-relaxed mb-8">
-            I'm a Full-Stack Developer & AI Specialist working remotely with global clients. With 8+ years of experience, I help businesses grow with fast, modern, and SEO-optimized websites. I focus on performance, clean design, and real results.
+            I'm a Full-Stack Developer & AI Specialist working remotely with
+            global clients. With 8+ years of experience, I help businesses grow
+            with fast, modern, and SEO-optimized websites. I focus on
+            performance, clean design, and real results.
           </p>
 
           <a
@@ -215,8 +263,10 @@ export default function Home() {
         </div>
 
         <div className="glass-card p-8 relative">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">Biography</div>
-          
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">
+            Biography
+          </div>
+
           <div className="grid grid-cols-2 gap-y-8 mt-4">
             <div>
               <p className="text-gray-500 text-xs uppercase mb-1">Name</p>
@@ -227,8 +277,12 @@ export default function Home() {
               <p className="font-bold">8+ Years</p>
             </div>
             <div>
-              <p className="text-gray-500 text-xs uppercase mb-1">Specialization</p>
-              <p className="font-bold">WordPress &<br></br> AI Automation</p>
+              <p className="text-gray-500 text-xs uppercase mb-1">
+                Specialization
+              </p>
+              <p className="font-bold">
+                WordPress &<br></br> AI Automation
+              </p>
             </div>
             <div>
               <p className="text-gray-500 text-xs uppercase mb-1">Email</p>
@@ -252,7 +306,9 @@ export default function Home() {
       <section className="section-padding grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div>
           <div className="relative mb-12">
-            <div className="absolute -top-4 left-0 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">Personal Skill</div>
+            <div className="absolute -top-4 left-0 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">
+              Personal Skill
+            </div>
           </div>
           <SkillBar label="WordPress & AI Development" percentage={95} />
           <SkillBar label="Custom HTML5 & CSS3" percentage={90} />
@@ -265,25 +321,37 @@ export default function Home() {
 
         <div>
           <div className="relative mb-12">
-            <div className="absolute -top-4 left-0 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">Education</div>
+            <div className="absolute -top-4 left-0 bg-brand-green text-black px-6 py-1 rounded-full text-xs font-bold">
+              Education
+            </div>
           </div>
           <div className="space-y-12">
             <div className="relative pl-8 border-l border-brand-green/30">
               <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
               <h3 className="text-lg font-bold mb-1">Graduation</h3>
-              <p className="text-brand-green text-xs font-bold mb-2 uppercase">University of Karachi</p>
+              <p className="text-brand-green text-xs font-bold mb-2 uppercase">
+                University of Karachi
+              </p>
               <p className="text-gray-500 text-xs mb-4">2008 - 2012</p>
               <p className="text-text-muted text-sm leading-relaxed">
-                Gained a solid foundation in computer science and software principles at the University of Karachi, focusing on web technologies and user experience design.
+                Gained a solid foundation in computer science and software
+                principles at the University of Karachi, focusing on web
+                technologies and user experience design.
               </p>
             </div>
             <div className="relative pl-8 border-l border-brand-green/30">
               <div className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-brand-green shadow-[0_0_10px_rgba(0,255,136,1)]" />
-              <h3 className="text-lg font-bold mb-1">Freelance WordPress Developer</h3>
-              <p className="text-brand-green text-xs font-bold mb-2 uppercase">Self-Employed / Fiverr & Upwork</p>
+              <h3 className="text-lg font-bold mb-1">
+                Freelance WordPress Developer
+              </h3>
+              <p className="text-brand-green text-xs font-bold mb-2 uppercase">
+                Self-Employed / Fiverr & Upwork
+              </p>
               <p className="text-gray-500 text-xs mb-4">2017 - Present</p>
               <p className="text-text-muted text-sm leading-relaxed">
-                Specializing in building high-performance WordPress websites, custom landing pages, and providing AI-driven development solutions for global clients on Fiverr & Upwork and other.
+                Specializing in building high-performance WordPress websites,
+                custom landing pages, and providing AI-driven development
+                solutions for global clients on Fiverr & Upwork and other.
               </p>
             </div>
           </div>
@@ -293,22 +361,24 @@ export default function Home() {
       {/* Portfolio Section */}
       <section id="portfolio" className="section-padding">
         <div className="text-center mb-16">
-          <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">Recent Work</span>
+          <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">
+            Recent Work
+          </span>
           <h2 className="text-4xl md:text-5xl font-bold">My Projects</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-  <ProjectCard
-    image="/images/growthstream-thumb.webp" 
-    category="Digital Agency"
-    title="GrowthStream - High Performance"
-    description="Modern SaaS-style landing page built with React and Tailwind CSS for maximum conversion."
-  />
           <ProjectCard
-            image="/images/AI-Driven Web Applications.webp"
-            category="AI-Driven Web Applications"
-            title="Integrating cutting-edge AI technologies"
-            description="Leveraging LLMs and custom AI agents to automate business workflows."
+            image="/images/growthstream-thumb.webp"
+            category="Digital Agency"
+            title="GrowthStream - High Performance"
+            description="Modern SaaS-style landing page built with React and Tailwind CSS for maximum conversion."
+          />
+          <ProjectCard
+            image="/images/vitality-thumb.webp" // Check karein ke ye file images folder mein hai
+            category="E-commerce / Fitness"
+            title="Vitality Smart Watch"
+            description="High-end fitness watch landing page featuring clean UI and modern product showcase."
           />
           <ProjectCard
             image="/images/responsive-design.webp"
@@ -329,7 +399,9 @@ export default function Home() {
       <section className="section-padding text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Choose Me?</h2>
         <p className="text-text-muted max-w-2xl mx-auto mb-12">
-          With 8+ years of experience, I help businesses grow with fast, modern, and SEO-optimized websites. I focus on performance, clean design, and real results.
+          With 8+ years of experience, I help businesses grow with fast, modern,
+          and SEO-optimized websites. I focus on performance, clean design, and
+          real results.
         </p>
 
         <div className="relative w-32 h-32 mx-auto mb-8">
@@ -343,17 +415,23 @@ export default function Home() {
           />
         </div>
         <div className="flex justify-center gap-1 mb-4">
-          {[...Array(5)].map((_, i) => <Star key={i} className="text-yellow-500 fill-current" size={16} />)}
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="text-yellow-500 fill-current" size={16} />
+          ))}
         </div>
         <h4 className="text-xl font-bold">Adnan Qaiser</h4>
-        <p className="text-brand-green text-xs font-bold uppercase tracking-widest">Senior WordPress & AI Developer</p>
+        <p className="text-brand-green text-xs font-bold uppercase tracking-widest">
+          Senior WordPress & AI Developer
+        </p>
       </section>
 
       {/* Trust Logos */}
       <section className="py-12 border-y border-border overflow-hidden">
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="h-px w-20 bg-border" />
-          <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Trusted By <span className="text-brand-green">10K+</span> Customers</span>
+          <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">
+            Trusted By <span className="text-brand-green">10K+</span> Customers
+          </span>
           <div className="h-px w-20 bg-border" />
         </div>
         <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale">
@@ -368,7 +446,9 @@ export default function Home() {
       {/* Blog Section */}
       <section id="blog" className="section-padding">
         <div className="text-center mb-16">
-          <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">Advanced Web Development with AI</span>
+          <span className="text-brand-green font-bold text-xs uppercase tracking-widest mb-4 block">
+            Advanced Web Development with AI
+          </span>
           <h2 className="text-4xl md:text-5xl font-bold">Expert Insights</h2>
         </div>
 
@@ -409,35 +489,63 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side: Heading */}
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">Let's Work Together 🚀</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Let's Work Together 🚀
+            </h2>
             <p className="text-text-muted text-lg leading-relaxed">
               Have a project in mind? Let's build something amazing.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.82 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 7.89a2 2 0 002.82 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase mb-1">Email</p>
-                  <a href="mailto:qaiseradnan51@gmail.com" className="font-semibold hover:text-brand-green transition-colors">
+                  <a
+                    href="mailto:qaiseradnan51@gmail.com"
+                    className="font-semibold hover:text-brand-green transition-colors"
+                  >
                     qaiseradnan51@gmail.com
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
                   </svg>
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase mb-1">Phone</p>
-                  <a href="tel:+923004091441" className="font-semibold hover:text-brand-green transition-colors">
+                  <a
+                    href="tel:+923004091441"
+                    className="font-semibold hover:text-brand-green transition-colors"
+                  >
                     +92-300-4091441
                   </a>
                 </div>
@@ -458,7 +566,9 @@ export default function Home() {
                 const formData = new FormData(form);
                 fetch("/", {
                   method: "POST",
-                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                  },
                   body: new URLSearchParams(formData as any).toString(),
                 })
                   .then(() => {
@@ -472,7 +582,9 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-xs text-gray-500 uppercase mb-2 block">Full Name</label>
+                  <label className="text-xs text-gray-500 uppercase mb-2 block">
+                    Full Name
+                  </label>
                   <input
                     name="name"
                     type="text"
@@ -482,7 +594,9 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-gray-500 uppercase mb-2 block">Email Address</label>
+                  <label className="text-xs text-gray-500 uppercase mb-2 block">
+                    Email Address
+                  </label>
                   <input
                     name="email"
                     type="email"
@@ -494,7 +608,9 @@ export default function Home() {
               </div>
 
               <div>
-                <label className="text-xs text-gray-500 uppercase mb-2 block">Subject</label>
+                <label className="text-xs text-gray-500 uppercase mb-2 block">
+                  Subject
+                </label>
                 <input
                   name="subject"
                   type="text"
@@ -504,7 +620,9 @@ export default function Home() {
               </div>
 
               <div>
-                <label className="text-xs text-gray-500 uppercase mb-2 block">Project Details</label>
+                <label className="text-xs text-gray-500 uppercase mb-2 block">
+                  Project Details
+                </label>
                 <textarea
                   name="message"
                   placeholder="Tell me about your project..."
@@ -513,8 +631,6 @@ export default function Home() {
                   required
                 ></textarea>
               </div>
-              
-              
 
               <button
                 type="submit"
@@ -530,8 +646,12 @@ export default function Home() {
       {/* Google Map Section */}
       <section className="py-12 px-6 md:px-20 lg:px-24">
         <div className="text-center mb-8">
-          <h3 className="text-brand-green text-xl md:text-2xl font-bold mb-2">Find Us Worldwide</h3>
-          <p className="text-text-muted text-sm">Delivering AI-powered web solutions to clients worldwide.</p>
+          <h3 className="text-brand-green text-xl md:text-2xl font-bold mb-2">
+            Find Us Worldwide
+          </h3>
+          <p className="text-text-muted text-sm">
+            Delivering AI-powered web solutions to clients worldwide.
+          </p>
         </div>
 
         <div className="glass-card overflow-hidden mb-8">
@@ -555,7 +675,10 @@ export default function Home() {
               <MapPin size={20} />
             </div>
             <h4 className="text-lg font-bold mb-2">Remote Services</h4>
-            <p className="text-text-muted text-sm">Providing top-quality development services from anywhere in the world</p>
+            <p className="text-text-muted text-sm">
+              Providing top-quality development services from anywhere in the
+              world
+            </p>
           </div>
 
           <div className="glass-card p-6">
@@ -563,7 +686,9 @@ export default function Home() {
               <Globe size={20} />
             </div>
             <h4 className="text-lg font-bold mb-2">Global Clients</h4>
-            <p className="text-text-muted text-sm">Working with businesses across multiple continents and time zones</p>
+            <p className="text-text-muted text-sm">
+              Working with businesses across multiple continents and time zones
+            </p>
           </div>
 
           <div className="glass-card p-6">
@@ -571,7 +696,9 @@ export default function Home() {
               <Zap size={20} />
             </div>
             <h4 className="text-lg font-bold mb-2">Fast Communication</h4>
-            <p className="text-text-muted text-sm">Quick response times and efficient project management</p>
+            <p className="text-text-muted text-sm">
+              Quick response times and efficient project management
+            </p>
           </div>
         </div>
       </section>
