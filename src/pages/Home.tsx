@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { servicesData } from "../data/services";
+import { projectsData } from "../data/projects";
 import { Download, Star, MapPin, Globe, Zap, Palette } from "lucide-react";
 
 const ServiceCard = ({
@@ -58,33 +59,68 @@ const ProjectCard = ({
   category,
   title,
   description,
+  liveUrl,
 }: {
   image: string;
   category: string;
   title: string;
   description: string;
-}) => (
-  <motion.div
-    whileHover={{ scale: 1.05, y: -8 }}
-    transition={{ type: "spring", stiffness: 200 }}
-    className="glass-card overflow-hidden group"
-  >
-    <img
-      src={image}
-      alt={title}
-      loading="lazy"
-      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-      referrerPolicy="no-referrer"
-    />
-    <div className="p-6">
-      <span className="text-[9px] uppercase tracking-widest text-brand-green font-bold mb-2 block">
-        {category}
-      </span>
-      <h3 className="text-xl font-bold font-display mb-1">{title}</h3>
-      <p className="text-text-muted text-xs line-clamp-2">{description}</p>
-    </div>
-  </motion.div>
-);
+  liveUrl?: string;
+}) => {
+  if (liveUrl) {
+    return (
+      <Link to={liveUrl} target="_blank" rel="noopener noreferrer">
+        <motion.div
+          whileHover={{ scale: 1.05, y: -8 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="glass-card overflow-hidden group cursor-pointer"
+        >
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+            referrerPolicy="no-referrer"
+          />
+          <div className="p-6">
+            <span className="text-[9px] uppercase tracking-widest text-brand-green font-bold mb-2 block">
+              {category}
+            </span>
+            <h3 className="text-xl font-bold font-display mb-1">{title}</h3>
+            <p className="text-text-muted text-xs line-clamp-2">{description}</p>
+            <div className="mt-4 flex items-center gap-2">
+              <Globe size={14} className="text-brand-green" />
+              <span className="text-xs text-brand-green font-bold">View Live</span>
+            </div>
+          </div>
+        </motion.div>
+      </Link>
+    );
+  }
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05, y: -8 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      className="glass-card overflow-hidden group cursor-pointer"
+    >
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
+      <div className="p-6">
+        <span className="text-[9px] uppercase tracking-widest text-brand-green font-bold mb-2 block">
+          {category}
+        </span>
+        <h3 className="text-xl font-bold font-display mb-1">{title}</h3>
+        <p className="text-text-muted text-xs line-clamp-2">{description}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const BlogCard = ({
   image,
@@ -370,32 +406,24 @@ download="Adnan-Qaiser-Automation-Test-Engineer.pdf"
           <h2 className="text-4xl md:text-5xl font-bold">My Projects</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ProjectCard
-            image="/images/growthstream-thumb.webp"
-            category="Digital Agency"
-            title="GrowthStream - High Performance"
-            description="Modern SaaS-style landing page built with React and Tailwind CSS for maximum conversion."
-          />
-          <ProjectCard
-            image="/images/vitality-thumb.webp" // Check karein ke ye file images folder mein hai
-            category="E-commerce / Fitness"
-            title="Vitality Smart Watch"
-            description="High-end fitness watch landing page featuring clean UI and modern product showcase."
-          />
-          <ProjectCard
-            image="/images/leadflow-dashboard-preview.webp"
-            category="Full-Stack SaaS Development"
-            title="LeadFlow CRM - Real-time Analytics Dashboard"
-            description="A high-performance CRM with Google Auth, Firestore integration, and real-time data tracking."
-          />
-          <ProjectCard
-            image="/images/technical-seo-speed-optimization.webp"
-            category="Technical SEO & Speed Optimization"
-            title="Enhancing website visibility and search"
-            description="Data-backed SEO strategies to rank your business on the first page."
-          />
-        </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  {projectsData.map((project) => (
+    <ProjectCard
+      key={project.id}
+      image={project.image}
+      category={project.category}
+      title={project.title}
+      description={project.description}
+      liveUrl={project.liveUrl}
+    />
+  ))}
+  <ProjectCard
+    image="/images/technical-seo-speed-optimization.webp"
+    category="Technical SEO & Speed Optimization"
+    title="Enhancing website visibility and search"
+    description="Data-backed SEO strategies to rank your business on the first page."
+  />
+</div>
       </section>
 
       {/* Why Choose Me */}
